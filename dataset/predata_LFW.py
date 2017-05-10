@@ -18,7 +18,7 @@ counttrain = 0
 for line in open("./lfw-names.txt"):
 	count = line.split("\t")
 	test_flag = 1
-	if (int(count[1])) >= 20:
+	if (int(count[1])) >= 1:
 		src = os.path.join("lfw-aligned/", count[0])
 		dst = os.path.join(traindir, count[0])
 		dst2 = os.path.join(testdir, count[0])
