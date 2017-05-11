@@ -12,7 +12,7 @@ FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('train_dir', './train_master',
                            """Directory where to write event logs """
                            """and checkpoint.""")
-tf.app.flags.DEFINE_integer('max_steps', 10000,
+tf.app.flags.DEFINE_integer('max_steps', 20000,
                             """Number of steps to run.""")
 tf.app.flags.DEFINE_integer('log_frequency', 10,
                             """How often to log results to the console.""")
@@ -43,8 +43,8 @@ if __name__ == '__main__':
   saver = tf.train.Saver()
   train_log = open("myl_train_baseline.log", "w")
   test_log = open("myl_test_baseline.log", "w")
-  train_log.write("iter#, total_loss, train_acc\n")
-  test_log.write("iter#, test_acc\n")
+  train_log.write("#iter, total_loss, train_acc\n")
+  test_log.write("#iter, test_acc\n")
   with tf.Session() as sess:
     merged = tf.summary.merge_all()
     train_writer = tf.summary.FileWriter(FLAGS.train_dir, sess.graph)
