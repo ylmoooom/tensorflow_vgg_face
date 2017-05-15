@@ -14,7 +14,7 @@ tf.app.flags.DEFINE_string('train_dir', './train_master',
                            """and checkpoint.""")
 tf.app.flags.DEFINE_integer('max_steps', 20000,
                             """Number of steps to run.""")
-tf.app.flags.DEFINE_integer('log_frequency', 50,
+tf.app.flags.DEFINE_integer('log_frequency', 10,
                             """How often to log results to the console.""")
 
 
@@ -64,7 +64,7 @@ if __name__ == '__main__':
         train_writer.add_summary(summary, i)
         print('step #%s, total_loss: %s, train_acc: %s' % (str(i), str(loss_val), str(acc_val)))
         train_log.write(str(i)+', '+str(loss_val)+', '+str(acc_val)+'\n')
-        if i % 100 == 0:
+        if i % 10 == 0:
           print('testing...testing...testing...')
           test_images, test_labels = mytrain.test_input('test', 'test.txt')
           #top_1 = tf.nn.in_top_k(logits, test_labels, 1)
