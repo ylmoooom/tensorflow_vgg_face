@@ -184,8 +184,8 @@ def inference(input_images, train=True):
     
     # fc3
     with tf.variable_scope('fc8') :
-        fc3w = tf.get_variable('weights', shape=[4096,5749], dtype=tf.float32, initializer=tf.random_normal_initializer(stddev=1e-2), trainable=True)
-        fc3b = tf.get_variable('biases', shape=[5749], dtype=tf.float32, initializer=tf.constant_initializer(0.0), trainable=True)
+        fc3w = tf.get_variable('weights', shape=[4096,158], dtype=tf.float32, initializer=tf.random_normal_initializer(stddev=1e-2), trainable=True)
+        fc3b = tf.get_variable('biases', shape=[158], dtype=tf.float32, initializer=tf.constant_initializer(0.0), trainable=True)
         fc3l = tf.nn.bias_add(tf.matmul(fc2, fc3w), fc3b)
 
     return fc3l
