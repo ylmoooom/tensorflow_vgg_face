@@ -17,18 +17,18 @@ FLAGS = tf.app.flags.FLAGS
 # Basic model parameters.
 tf.app.flags.DEFINE_integer('batch_size', 64, """Number of images to process in a batch.""")
 tf.app.flags.DEFINE_string('data_dir', '../dataset/', """Path to the training data directory.""")
-tf.app.flags.DEFINE_integer('num_classes', 5749, """Number of classes.""")
+tf.app.flags.DEFINE_integer('num_classes', 158, """Number of classes.""")
 tf.app.flags.DEFINE_integer('image_size', 224, """Images size of input.""")
 
 
-NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 12856
+NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 3947
 NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 377
 # Constants describing the training process.
 WEIGHT_DECAY_FACTOR = 0.0005
 MOVING_AVERAGE_DECAY = 0.9     # The decay to use for the moving average.
-NUM_EPOCHS_PER_DECAY = 40      # Epochs after which learning rate decays.
+NUM_EPOCHS_PER_DECAY = 30      # Epochs after which learning rate decays.
 LEARNING_RATE_DECAY_FACTOR = 0.1  # Learning rate decay factor.
-INITIAL_LEARNING_RATE = 0.001       # Initial learning rate.
+INITIAL_LEARNING_RATE = 0.01       # Initial learning rate.
 
 
 def train_input(dir, namelist):
