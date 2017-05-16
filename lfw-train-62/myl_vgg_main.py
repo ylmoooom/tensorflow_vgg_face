@@ -49,8 +49,8 @@ if __name__ == '__main__':
     merged = tf.summary.merge_all()
     train_writer = tf.summary.FileWriter(FLAGS.train_dir, sess.graph)
     sess.run(init)
-    #mynet.load_weights('converted_data', sess)
-    #print('weights loaded!')
+    mynet.load_weights('converted_data', sess)
+    print('weights loaded!')
 
     coord = tf.train.Coordinator()
     threads = tf.train.start_queue_runners(coord=coord)
