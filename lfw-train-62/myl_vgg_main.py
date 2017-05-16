@@ -41,8 +41,8 @@ if __name__ == '__main__':
 
   init = tf.global_variables_initializer()
   saver = tf.train.Saver()
-  train_log = open("myl_train_e3.log", "w")
-  test_log = open("myl_test_e3.log", "w")
+  train_log = open("myl_train_e2.log", "w")
+  test_log = open("myl_test_e2.log", "w")
   train_log.write("#iter, total_loss, train_acc\n")
   test_log.write("#iter, test_acc\n")
   with tf.Session() as sess:
