@@ -8,6 +8,9 @@
 import tensorflow as tf
 import numpy as np
 
+FLAGS = tf.app.flags.FLAGS
+tf.app.flags.DEFINE_float('noise', 0.96, """Noise level to add.""")
+
 def inference(input_images, train=True):
     # zero-mean input
     with tf.name_scope('preprocess') as scope:
@@ -28,7 +31,7 @@ def inference(input_images, train=True):
         #my_module = tf.load_op_library('/home/yl_mao0916/tensor/tensorflow/bazel-bin/tensorflow/core/user_ops/myl_net_layer.so')
         #out_b = my_module.local_norm(out_a)
         out_b = tf.nn.local_response_normalization(out_a)
-        noise = tf.random_normal([64,224,224,64], 0, 2.4)
+        noise = tf.random_normal([64,224,224,64], 0, FLAGS.noise)
         out_c = tf.add(out_b,noise)
         conv1_1 = tf.convert_to_tensor(out_c, name='conv1_1')
 
