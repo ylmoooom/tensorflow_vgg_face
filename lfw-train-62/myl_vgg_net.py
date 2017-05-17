@@ -30,7 +30,7 @@ def inference(input_images, train=True):
         out_b = tf.nn.local_response_normalization(out_a)
         noise = tf.random_normal([64,224,224,64], 0, 2.4)
         out_c = tf.add(out_b,noise)
-        conv1_1 = tf.convert_to_tensor(out_b, name='conv1_1')
+        conv1_1 = tf.convert_to_tensor(out_c, name='conv1_1')
 
     # conv1_2
     with tf.variable_scope('conv1_2') :
