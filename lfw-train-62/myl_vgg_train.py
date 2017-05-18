@@ -24,7 +24,7 @@ tf.app.flags.DEFINE_integer('image_size', 224, """Images size of input.""")
 NUM_EXAMPLES_PER_EPOCH_FOR_TRAIN = 3947
 NUM_EXAMPLES_PER_EPOCH_FOR_EVAL = 377
 # Constants describing the training process.
-WEIGHT_DECAY_FACTOR = 0.0005
+#WEIGHT_DECAY_FACTOR = 0.0005
 MOVING_AVERAGE_DECAY = 0.9     # The decay to use for the moving average.
 NUM_EPOCHS_PER_DECAY = 30      # Epochs after which learning rate decays.
 LEARNING_RATE_DECAY_FACTOR = 0.1  # Learning rate decay factor.
