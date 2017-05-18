@@ -9,7 +9,7 @@ import tensorflow as tf
 import numpy as np
 
 FLAGS = tf.app.flags.FLAGS
-tf.app.flags.DEFINE_float('noise', 1.6, """Noise level to add.""")
+tf.app.flags.DEFINE_float('noise', 0.0, """Noise level to add.""")
 
 def inference(input_images, train=True):
     # zero-mean input
